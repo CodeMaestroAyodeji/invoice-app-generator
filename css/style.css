@@ -1,0 +1,63 @@
+/* Main custom styles for Invoice Generator */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+#logoPreview {
+    width: 80px;
+    height: 80px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #6c757d;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#signaturePad {
+    background: #fff;
+    cursor: crosshair;
+}
+
+@media print {
+    body, .container {
+        background: #fff !important;
+    }
+    .btn, #themeToggle, #templateSelector, #addItem, #saveInvoice, #printInvoice, #downloadPDF {
+        display: none !important;
+    }
+    .card, .mb-3, .mb-4 {
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    #invoiceFooter {
+        page-break-inside: avoid;
+    }
+}
+
+/* Template color classes (example) */
+.template-blue { --bs-primary: #0d6efd; }
+.template-green { --bs-primary: #198754; }
+.template-red { --bs-primary: #dc3545; }
+
+/* Light/Dark theme */
+body.dark-theme {
+    background: #181a1b !important;
+    color: #f8f9fa;
+}
+body.dark-theme .card {
+    background: #23272b;
+    color: #f8f9fa;
+}
+body.dark-theme input, body.dark-theme textarea, body.dark-theme select {
+    background: #23272b;
+    color: #f8f9fa;
+    border-color: #444;
+}
